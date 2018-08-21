@@ -6,8 +6,8 @@ NUM_ITEMS = 6
 
 def n_choose_2(n):
 	return factorial(n) / (F2*factorial(n-2))
-
-if __name__ == "__main__":
+	
+def generateAll():
 	unique_comparisons=  [(i,j) for i in range(NUM_ITEMS) for j in range(NUM_ITEMS) if i != j]
 	print(unique_comparisons)
 	# beginning = list(unique_comparisons)
@@ -69,7 +69,10 @@ if __name__ == "__main__":
 			print(p)
 		print(len(participant_series))
 		
-with open("generated_output.txt", 'w') as filename:
-	for p in participant_series:
-		filename.write(str(p))
-		filename.write("\n")
+	with open("generated_output.txt", 'w') as filename:
+		for p in participant_series:
+			filename.write(str(p))
+			filename.write("\n")
+
+if __name__ == "__main__":
+	generateAll()
